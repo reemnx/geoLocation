@@ -90,6 +90,7 @@ body {
 }
 .pos-container:hover{
     border: 1.5px solid coral;
+    cursor: pointer;
 }
 
 .features {

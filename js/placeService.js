@@ -4,8 +4,8 @@ var gPlaces = getPlaces();
 
 
 function createNewPlace(lat, lng, location) {
-    lat = lat.toFixed(2);
-    lng = lng.toFixed(2);
+    lat = lat ;
+    lng = lng ;
     var place = {
         name: location,
         lat: lat,

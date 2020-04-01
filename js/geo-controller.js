@@ -2,9 +2,9 @@
 var map;
 
 function onInit() {
+    renderPlaces();
     setUsrPref();
     initMap();
-    renderPlaces();
 }
 
 function initMap(lat = 29.55805, lng = 34.94821) {
@@ -14,15 +14,15 @@ function initMap(lat = 29.55805, lng = 34.94821) {
     });
     var marker = new google.maps.Marker({ position: map.center, map: map });
     map.addListener('click', event => {
+        console.log(event);
         var location = prompt('Whats the location name?');
-        // if(!location){
-        //      alert('Name cant be blank')
-        //       return;
-        // }
-        var lat = event.latLng.toJSON().lat ;
-        var lng = event.latLng.toJSON().lng ;
-        debugger
-        createNewPlace(lat,lng,location);
+        if (!location) {
+            alert('Name cant be blank')
+            return;
+        }
+        var lat = event.latLng.toJSON().lat;
+        var lng = event.latLng.toJSON().lng;
+        createNewPlace(lat, lng, location);
     });
 }
 
@@ -91,13 +91,12 @@ function setUsrPref() {
     renderHoroscopModal();
 }
 function renderPlaces() {
-
     var places = getPlaces();
     var elDiv = document.querySelector('.render-places');
     var strHTML = '';
-    for(var i = 0; i < places.length; i++) {
+    for (var i = 0; i < places.length; i++) {
         strHTML += `
-        <div class="pos-container">
+        <div onclick="onPosClicked(${i})" class="pos-container">
         <h3>Location: ${places[i].name}</h3>
         <h4>lat: ${places[i].lat}</h4>
         <h4>lng: ${places[i].lng}</h4>
@@ -106,4 +105,13 @@ function renderPlaces() {
         `
     }
     elDiv.innerHTML = strHTML;
+}
+function onPosClicked(idx) {
+    console.log(idx);
+    posClicked(idx);
+}
+function posClicked(idx){
+    var lat = gPlaces[idx].lat ;
+    var lng = gPlaces[idx].lng ;
+    initMap(lat, lng);
 }

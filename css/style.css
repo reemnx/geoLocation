@@ -52,6 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     /* justify-content: space-between; */
 }
 .fav-dests::-webkit-scrollbar {
@@ -68,14 +69,15 @@ body {
 .pos-container{
     width: 98%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border: 1.5px solid rgb(94, 94, 94);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     margin: 10px auto;
+    text-align: center;
 }
 .pos-container h3{
     padding: 10px;
@@ -83,6 +85,13 @@ body {
 .pos-container h4{
     padding: 10px;
 }
+.pos-container:active{
+    border: 1.5px solid rgb(0, 255, 200) !important;
+}
+.pos-container:hover{
+    border: 1.5px solid coral;
+}
+
 .features {
     width: 40%;
     height: 87%;
@@ -267,8 +276,9 @@ form button{
     margin-right: 10px;
     padding: 10px;
     color: white;
-    border: 1.5px solid coral;
+    border: 1.5px solid rgb(0, 132, 255);
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 .place-del:hover{
     cursor: pointer;

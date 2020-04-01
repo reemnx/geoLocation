@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User | Prefrences</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <a class="nextpage" href="index.html">Back to home page</a>
+    </nav>
+    <section class="form-section">
+        <div class="form-holder">
+            <h2>Your Prefrences:</h2>
+            <form onsubmit="onSaveInfo(event,this)">
+
+                <label for="usrBgColor">Choose Prefered BG Color</label>
+                <input type="color" id="usrBgColor" name="bgColor" />
+
+                <label for="usrTxtColor">Choose Prefered Text Color</label>
+                <input type="color" id="usrTxtColor" name="txtColor" />
+
+                <label for="usrBirthDate">Set your birth-date</label>
+                <input type="date" id="usrBirthDate" name="birthDate" />
+
+                <label for="usrAge">Set your age</label>
+                <input type="range" id="usrAge" name="age" min="18" max="120"  value="18"/>
+
+                <label for="usrEmail">Enter your best Email</label>
+                <input type="email" id="usrEmail" name="email" required />
+
+                <button class="formSaveBtn">Save Info</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/utilService.js"></script>
+    <script src="js/userPrefService.js"></script>
+    <script src="js/placeService.js"></script>
+    <script src="js/geo-controller.js"></script>
+</body>
+
+</html>

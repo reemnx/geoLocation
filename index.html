@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geoLocation | Reem Alon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/world.png" />
+</head>
+
+<body onload="onInit()">
+    <nav class="nav-bar">
+        <h1>geoLocation '🦸Utzmati🦸'</h1>
+    </nav>
+    <section class="content-container">
+        <section class="features">
+            <h2>App features:</h2>
+            <div class="usr-pref-container">
+                <a class="nextpage" href="user-pref.html">Set Your Preferences</a>
+            </div>
+            <div class="map-feature-container">
+                <img onclick="onCurrPos()" class="mylocation" src="img/location.png" width="50px" height="50px">
+                <div id="map"></div>
+            </div>
+        </section>
+        <div class="fav-dests">
+            <h2>Saved Places:</h2>
+            <div class="render-places">
+
+            </div>
+        </div>
+        <article class="horoscop">
+            <h2>Your destiny:</h2>
+            <main class="horoscop-modal">
+                <h2>Horoscop for: <span class="scop-sign">...</span></h2>
+                <img class="sign-img" src="..." width="80px" height="80px" >
+                <p class="sign-desc">...</p>
+            </main>
+        </article>
+    </section>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMH1nwqcnzJSZCqKe37oYRxTK4KjgH46M&callback=initMap"
+    async defer></script>
+    <script src="js/userPrefService.js"></script>
+    <script src="js/placeService.js"></script>
+    <script src="js/utilService.js"></script>
+    <script src="js/geo-controller.js"></script>
+</body>
+
+</html>
